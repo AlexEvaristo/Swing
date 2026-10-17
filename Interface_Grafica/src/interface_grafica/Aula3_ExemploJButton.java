@@ -36,6 +36,8 @@ public class Aula3_ExemploJButton {
 			JOptionPane.showMessageDialog(janela, "Você Clicou no botão Básico!");
 		});
 		
+		JButton botao2 = new JButton("Botão Azul");
+		
 		painelCentro.add(botao1);
 		
 		janela.add(painelCentro, BorderLayout.CENTER);
