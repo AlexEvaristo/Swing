@@ -68,9 +68,22 @@ public class Aula3_ExemploJButton {
 	    		)	    	
 	    );
 	    
+	    //BOTÃO3
+	    
+	    JButton botao3 = new JButton("Fonte Grande");
+	    
+	    botao3.setFont(new Font("Arial", Font.BOLD, 18));
+	    
+	    botao3.addActionListener(e ->
+	    	JOptionPane.showMessageDialog(
+	    			janela,
+	    			"Você clicou no botão com fonte grande!"
+	    			)
+	    );
 		
 		painelCentro.add(botao1);
 		painelCentro.add(botao2);
+		painelCentro.add(botao3);
 		
 		
 		janela.add(painelCentro, BorderLayout.CENTER);
