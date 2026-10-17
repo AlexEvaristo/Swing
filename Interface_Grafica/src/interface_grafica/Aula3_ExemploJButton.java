@@ -47,6 +47,7 @@ public class Aula3_ExemploJButton {
 		janela.setLocationRelativeTo(null);
 		
 		janela.setVisible(true);
+		//========Final do botão 1=========
 	}
-//========Final do botão 1=========
+
 }
