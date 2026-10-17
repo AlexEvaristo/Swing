@@ -27,6 +27,9 @@ public class Aula3_ExemploJButton {
 		
 		painelCentro.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
+		
+		
+		//BOTÃO 1
 		JButton botao1 = new JButton("Clique em Mim");
 		
 		botao1.setToolTipText("Exemplo de botão básico");
@@ -36,9 +39,39 @@ public class Aula3_ExemploJButton {
 			JOptionPane.showMessageDialog(janela, "Você Clicou no botão Básico!");
 		});
 		
+		
+		
+		//BOTAO 02
 		JButton botao2 = new JButton("Botão Azul");
 		
+	    botao2.setUI(new javax.swing.plaf.basic.BasicButtonUI());
+	    
+	    botao2.setContentAreaFilled(true);
+	    
+	    botao2.setOpaque(true);
+	    
+	    botao2.setBackground(new Color(0, 85, 204));
+	    
+	    botao2.setForeground(Color.white);//Definindo a cor de fora 
+	    
+	    botao2.setBorder(BorderFactory.createLineBorder(new Color(0, 70, 170)));
+	    
+	    botao2.setFocusPainted(false);
+	    
+	    botao2.setFont(new Font("Arial", Font.BOLD, 14));
+	    
+	    botao2.addActionListener(e ->
+	    	JOptionPane.showMessageDialog(
+	    			janela,
+	    			"Botão Azul Pressionado!"
+	    			
+	    		)	    	
+	    );
+	    
+		
 		painelCentro.add(botao1);
+		painelCentro.add(botao2);
+		
 		
 		janela.add(painelCentro, BorderLayout.CENTER);
 		
