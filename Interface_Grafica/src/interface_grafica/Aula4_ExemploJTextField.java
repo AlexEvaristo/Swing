@@ -46,17 +46,66 @@ public class Aula4_ExemploJTextField {
 		
 		JPanel painelValidacao = new JPanel(new FlowLayout());
 		
-		//painelValidacao.add(rotuloNumero);
 		
-		//painelValidacao.add(campoNumero);
+		painelValidacao.setBorder(BorderFactory.createTitledBorder("Validação de número"));
 		
-		//painelValidacao.add(botaoVerificar);
+		JLabel rotuloNumero = new JLabel("Digite um número:");
 		
+		JTextField campoNumero = new JTextField(8);
+		
+		JButton botaoVerificar = new JButton("Verificar");
+		
+		botaoVerificar.addActionListener(e -> {
+			
+			try {
+				int numero = Integer.parseInt(campoNumero.getText());
+				
+				JOptionPane.showMessageDialog(
+						janela,
+						"Você digitou o número ! " + numero, 
+						"Número válido",
+						JOptionPane.INFORMATION_MESSAGE
+						
+				);
+				
+			} catch (NumberFormatException ex) {
+				JOptionPane.showMessageDialog(
+						janela,
+						"Digite apenas números!",
+						"Erro",
+						JOptionPane.ERROR_MESSAGE
+						);
+				}			
+		});
+		
+		
+		
+		
+		
+		painelValidacao.add(rotuloNumero);
+		
+		painelValidacao.add(campoNumero);
+		
+		painelValidacao.add(botaoVerificar);
+		
+		
+		
+		
+		JPanel painelPesquisa = new JPanel(new BorderLayout());
+		
+		painelPesquisa.setBorder(BorderFactory.createTitledBorder("Pesquisa simulada"));
+		
+		JPanel painelTopo = new JPanel(new FlowLayout());
+		
+		JLabel rotuloPesquisa = new JLabel("Pesquisar");
+		
+		
+
 		janela.add(painelLogin);
 		
 		janela.add(painelValidacao);
 		
-		//janela.add(painelPesquisa);
+		janela.add(painelPesquisa);
 		
 		
 		janela.setVisible(true);
