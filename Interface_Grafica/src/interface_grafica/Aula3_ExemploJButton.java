@@ -80,10 +80,55 @@ public class Aula3_ExemploJButton {
 	    			"Você clicou no botão com fonte grande!"
 	    			)
 	    );
+	    
+	    //BOTÃO4
+	    
+	    URL urlIcone = Aula3_ExemploJButton.class.getResource("/interface_grafica/java.png");
+	    
+	    ImageIcon iconeAjustado =  null;
+	    
+	    if(urlIcone != null) {
+	    	
+	    	ImageIcon iconeOriginal = new ImageIcon(urlIcone);
+	    	
+	    	Image img = iconeOriginal.getImage();
+	    	
+	    	int largura     = 48;
+	    	int alturaIcone = 48;
+	    	
+	    	Image imgEscalada =  img.getScaledInstance(largura, alturaIcone, Image.SCALE_SMOOTH);
+	    	
+	    	iconeAjustado =  new ImageIcon(imgEscalada);	    	
+	    	
+	    }
+	    
+	    JButton botao4 = (iconeAjustado != null)
+	    		? new JButton("Com ícone", iconeAjustado)
+	    		: new JButton("Com Ícone");
+	    
+	    botao4.setHorizontalTextPosition(SwingConstants.CENTER);
+	    botao4.setVerticalTextPosition(SwingConstants.BOTTOM);
+	    
+	    botao4.setIconTextGap(8);
 		
+	    botao4.setMargin(new Insets(10, 12, 10, 12));
+	    
+	    botao4.setFont(new Font("Arial", Font.PLAIN, 14));
+	    
+	    botao4.setPreferredSize(new Dimension(160, 120));
+	    
+	    botao4.addActionListener(e ->
+	    	JOptionPane.showMessageDialog(
+	    			
+	    			janela,
+	    			"Botão com ícone pressionado!"
+	    			)	    	
+	    );
+	    
 		painelCentro.add(botao1);
 		painelCentro.add(botao2);
 		painelCentro.add(botao3);
+		painelCentro.add(botao4);
 		
 		
 		janela.add(painelCentro, BorderLayout.CENTER);
