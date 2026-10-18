@@ -29,7 +29,7 @@ public class Aula3_ExemploJButton {
 		
 		
 		
-		//BOTÃO 1
+		//BOTÃO 01
 		JButton botao1 = new JButton("Clique em Mim");
 		
 		botao1.setToolTipText("Exemplo de botão básico");
@@ -68,8 +68,7 @@ public class Aula3_ExemploJButton {
 	    		)	    	
 	    );
 	    
-	    //BOTÃO3
-	    
+	    //BOTÃO 03	    
 	    JButton botao3 = new JButton("Fonte Grande");
 	    
 	    botao3.setFont(new Font("Arial", Font.BOLD, 18));
@@ -81,8 +80,7 @@ public class Aula3_ExemploJButton {
 	    			)
 	    );
 	    
-	    //BOTÃO4
-	    
+	    //BOTÃO 04	    
 	    URL urlIcone = Aula3_ExemploJButton.class.getResource("/interface_grafica/java.png");
 	    
 	    ImageIcon iconeAjustado =  null;
@@ -140,7 +138,7 @@ public class Aula3_ExemploJButton {
 		janela.setLocationRelativeTo(null);
 		
 		janela.setVisible(true);
-		//========Final do botão 1=========
+		
 	}
 
 }
