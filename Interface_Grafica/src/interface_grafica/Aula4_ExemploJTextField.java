@@ -112,6 +112,8 @@ public class Aula4_ExemploJTextField {
 		painelPesquisa.add(painelTopo, BorderLayout.NORTH);
 
 		painelPesquisa.add(rolagemResultados, BorderLayout.CENTER);
+		
+		
 
 		janela.add(painelLogin);
 
