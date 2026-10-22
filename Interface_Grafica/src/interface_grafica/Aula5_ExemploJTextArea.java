@@ -4,8 +4,6 @@ import javax.swing.*;
 
 import java.awt.*;
 
-//INICIANDO COM O INTELIJ
-
 public class Aula5_ExemploJTextArea {
 
 	public static void main(String[] args) {
