@@ -20,6 +20,8 @@ public class Aula5_ExemploJTextArea {
 		// 4. Define o layout da janela como uma grelha de 3 linhas e 1 coluna, com 10px de espaçamento horizontal e vertical entre os elementos
 		janela.setLayout(new GridLayout(3, 1, 10, 10));
 
+
+		//PAINEL BLOCO DE NOTAS SIMPLES
 		// 5. Cria um painel (contentor) que organiza os seus componentes usando o BorderLayout (Norte, Sul, Leste, Oeste e Centro)
 		JPanel painelBlocosNotas = new JPanel(new BorderLayout());
 
@@ -44,9 +46,6 @@ public class Aula5_ExemploJTextArea {
 
 		// 11. Cria a área de texto para mensagens de log, configurada inicialmente para 5 linhas e 30 colunas
 		JTextArea areaLog = new JTextArea(5, 30);
-		
-		JScrollPane rolagemLog = new JScrollPane(areaLog);
-		painelLog.add(rolagemLog, BorderLayout.CENTER);
 
 		// 12. Desativa a edição do campo para que o usuário não possa digitar manualmente no log
 		areaLog.setEditable(false);
@@ -60,16 +59,67 @@ public class Aula5_ExemploJTextArea {
 		// 15. Define a fonte como "Monospaced" (largura fixa de caracteres), tamanho 12, garantindo o alinhamento de texto de log
 		areaLog.setFont(new Font("Monospaced", Font.PLAIN, 12));
 
-		// 16. Adiciona o painel do bloco de notas à grade principal da janela
+
+		// Cria a barra de rolagem associada à área de texto de logs para permitir rolar o conteúdo
+		JScrollPane rolagemLog = new JScrollPane(areaLog);
+
+		// Adiciona a área de log com rolagem na parte central do painel de logs
+		painelLog.add(rolagemLog, BorderLayout.CENTER);
+
+		// Cria um botão interativo com o rótulo "Adicionar Log"
+		JButton botaoAdicionarLog = new JButton("Adicionar Log");
+
+		// Configura a ação de clique do botão para inserir uma nova linha de texto na área de logs dinamicamente
+		botaoAdicionarLog.addActionListener( e -> {
+			areaLog.append("Nova linha de Log Gerada\n");
+		});
+
+		painelLog.add(botaoAdicionarLog, BorderLayout.SOUTH);
+
+
+		//Painel Contador
+		// Cria um novo painel dedicado ao contador com layout BorderLayout
+		JPanel painelContador = new JPanel(new BorderLayout());
+
+		// Adiciona uma borda com título decorativo ao redor do painel do contador
+		painelContador.setBorder(BorderFactory.createTitledBorder("Contador de caracteres"));
+
+		// Cria uma área de texto específica para o contador com 5 linhas e 30 colunas de tamanho inicial
+		JTextArea areaContador = new JTextArea(5, 30);
+
+		// Cria a barra de rolagem para a área de texto do contador
+		JScrollPane rolagemContador = new JScrollPane(areaContador);
+
+		// Adiciona a área de texto com rolagem na posição central do painel do contador
+		painelContador.add(rolagemContador, BorderLayout.CENTER);
+
+		// Cria um rótulo (label) estático para exibir a contagem inicial de caracteres como zero
+		JLabel labelContador = new JLabel("Caracteres: 0");
+
+		// Posiciona o rótulo do contador na parte inferior (sul) do painel
+		painelContador.add(labelContador, BorderLayout.SOUTH);
+
+		// Adiciona um listener para monitorar a movimentação do cursor ou digitação na área de texto do contador
+		areaContador.addCaretListener(e -> {
+			int totalCaracteres = areaContador.getText().length();
+
+			// Atualiza o texto do rótulo exibindo a quantidade atualizada de caracteres
+			labelContador.setText("Caracteres: " + totalCaracteres);
+		});
+
+
+
+		// Adiciona o painel do bloco de notas à grade principal da janela
 		janela.add(painelBlocosNotas);
 
-		// 17. Adiciona o painel de log à grade principal da janela
+		// Adiciona o painel de log à grade principal da janela
 		janela.add(painelLog);
 
-		// 18. [Linha comentada] Reservada para adicionar o painel do contador na janela quando for ativado
-		//janela.add(painelContador);
+
+		janela.add(painelContador);
 
 		// 20. Torna a janela e todos os seus componentes adicionados visíveis na tela
-		janela.setVisible(true);		
+		janela.setVisible(true);
+
 	}
 }
