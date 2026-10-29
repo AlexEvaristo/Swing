@@ -113,6 +113,7 @@ public class Aula6_ExemploJPasswordField {
         painelForca.add(labelForca, BorderLayout.CENTER);
 
         janela.add(painelLogin);
+        
         janela.add(painelMostrar);
         janela.add(painelForca);
 
